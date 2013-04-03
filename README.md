@@ -22,24 +22,36 @@ For Ubuntu:
 
 ## Generate a Fibonacci sequence
 
-	$ curl http://localhost:5000/fibonacci/10
+	$ curl -s http://localhost:5000/fibonacci/10
 
 
 # Testing
 
-## Install libxml
+## Schema Validation
+
+### Install libxml
 
 For Ubuntu:
 
 	$ sudo apt-get install libxml2-utils
 
-## Validate output against XSD
+### Validate output against XSD
 
 From the `mathserver` top-level directory...
 
-	$ curl -s http://localhost:5000/fibonacci/10 | xmllint --noout --schema mathserver/schemas/fibonacci.xsd -
+	$ curl -s http://localhost:5000/fibonacci/10 | xmllint --noout --schema schemas/fibonacci.xsd -
 
 This should produce the following output if the retured XML is valid:
 
 	- validates
 
+## Math Validation
+
+With the server running, from the top-level directory...
+
+	$ curl -s http://localhost:5000/fibonacci/10 | python tests/validatefibbonaci.py
+
+This should produce the following output if the returned Fibonacci sequence is valid:
+
+	Server returned 8 as the fifth Fibonacci number.
+	Fibonacci sequence validated.
