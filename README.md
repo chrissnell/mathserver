@@ -55,3 +55,10 @@ This should produce the following output if the returned Fibonacci sequence is v
 
 	Server returned 8 as the fifth Fibonacci number.
 	Fibonacci sequence validated.
+
+# To Do
+
++ Caching of Fibonacci calculations
++ Fancy, more descriptive error pages 
++ Write a performance test that feeds random Fibonacci number requests to `ab` and see it performs 
++ Makefile to automate installation and testing
