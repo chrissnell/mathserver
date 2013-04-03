@@ -1,5 +1,5 @@
 # About
-**mathserver** is a simple RESTful web service that serves up mathmetical computations.   At the present time, it includes the following functionality:
+**mathserver** is a simple RESTful web service that serves up mathmetical computations.   It uses the [Flask](http://flask.pocoo.org/) framework to handle the incoming HTTP requests.   At the present time, it includes the following functionality:
 ##Fibonacci Sequences
 `GET /fibonacci/n` will return a Fibonacci sequence with *n* numbers, where *n* &gte; 0.  
 Sequences are returned in XML format; see schemas/fibonacci.xsd for schema.   
